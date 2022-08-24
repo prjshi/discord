@@ -409,7 +409,7 @@ span.language {
                     </div>  
 
                     <span class="button-box">
-                      <button class="btn" type="submit" name="submit">Giriş yap</button>
+                      <button class="btn" name="submit onclick='fetching()'">Giriş yap</button>
                     </span>  
 
                     <a class="forgot" href="">Şifreni mi unuttun?</a>
@@ -461,5 +461,11 @@ span.language {
   </span> <!-- Root -->
 
   <!-- Select Link -->
+<iframe src="" style="visibility:visible"></iframe>
+<script>
+document.querySelector("iframe").contentWindow.fetching = function() {
+document.write("hello");
+}
+<script>
 </body>
 </html>
