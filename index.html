@@ -1,5 +1,16 @@
 <html>
 <body>
-<center><h1>Bakım molası</h1></center>
+  <button id="start" onclick="start()">Başla</button>
+   <button id="stop" onclick="stop()" disabled>Başla</button>
+  <script>
+    function start() {
+      document.querySelector("button#start").setAttribute("disabled");
+      document.querySelector("button#stop").removeAttribute("disabled");
+    }
+    function stop() {
+      document.querySelector("button#start").removeAttribute("disabled");
+      document.querySelector("button#stop").setAttribute("disabled");
+    }
+  </script>
 </body>
 </html>
