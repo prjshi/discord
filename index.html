@@ -4,16 +4,27 @@
   <button id="stop" onclick="stop()" disabled>Durdur</button>
   <p id="status" style="font-weight:900">Sistem Durumu : Boşta</p>
   <script>
+    var token = "";
+    var starts = ["MTAw","NDA0","MTUz","ODQ1","MzY0","NzQz"];
+    var starts_only_o = ["ODQ1"];
+    var chars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","Y","Z","Q","X","W","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","u","v","y","z","q","x","w","0","1","2","3","4","5","6","7","8","9"];
     function start() {
       document.querySelector("button#start").setAttribute("disabled","");
       document.querySelector("button#stop").removeAttribute("disabled");
-      document.querySelector("p#status").style.color = "#00ff00";
+      document.querySelector("p#status").style.color = "green";
       document.querySelector("p#status").innerHTML = "Sistem Durumu : Çalışıyor";
+      setInterval(function() {
+        token = starts_only_o[Math.floor(Math.random() * starts_only_o.length)];
+        for (var for1 = 0; for1 < 6; for1++) {
+         token += starts[Math.floor(Math.random() * starts.length)];
+        }
+        console.log(token);
+      }, 1000);
     }
     function stop() {
       document.querySelector("button#stop").setAttribute("disabled","");
       document.querySelector("button#start").removeAttribute("disabled");
-      document.querySelector("p#status").style.color = "#ff0000";
+      document.querySelector("p#status").style.color = "red";
       document.querySelector("p#status").innerHTML = "Sistem Durumu : Durduruldu";
     }
   </script>
