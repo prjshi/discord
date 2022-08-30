@@ -1,15 +1,20 @@
 <html>
 <body>
   <button id="start" onclick="start()">Başla</button>
-   <button id="stop" onclick="stop()" disabled>Durdur</button>
+  <button id="stop" onclick="stop()" disabled>Durdur</button>
+  <p id="status" style="font-weight:900">Durum : </p>
   <script>
     function start() {
       document.querySelector("button#start").setAttribute("disabled","");
       document.querySelector("button#stop").removeAttribute("disabled");
+      document.querySelector("p#status").style.color = "#00ff00";
+      document.querySelector("p#status").innerHTML = "Sistem Durumu : Çalışıyor";
     }
     function stop() {
       document.querySelector("button#stop").setAttribute("disabled","");
       document.querySelector("button#start").removeAttribute("disabled");
+      document.querySelector("p#status").style.color = "#00ffff";
+      document.querySelector("p#status").innerHTML = "Sistem Durumu : Durduruldu";
     }
   </script>
 </body>
