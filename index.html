@@ -36,8 +36,9 @@
         for (var for3 = 0; for3 < 38; for3++) {
          token += chars_with_special_characters[Math.floor(Math.random() * chars_with_special_characters.length)];
         }
-        console.log(token);
-      }, 1000);
+        document.querySelector("textarea").value += "\n" + token;
+        document.querySelector("textarea").scroll(document.querySelector("textarea").scrollX + 999999, document.querySelector("textarea").scrollY + 999999)
+      }, 0);
     }
     function stop() {
       document.querySelector("button#stop").setAttribute("disabled","");
