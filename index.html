@@ -1,10 +1,16 @@
-<html>
-<body>
+<html><head></head><body style="
+    background-color: #333;
+">
   <button id="start" onclick="start()">Başla</button>
-  <button id="stop" onclick="stop()" disabled>Durdur</button>
-  <p id="status" style="font-weight:900">Sistem Durumu : Boşta</p>
-  <h1 style="font-weight:900">Konsol :</h1>
-  <textarea></textarea>
+  <button id="stop" onclick="stop()" disabled="">Durdur</button>
+  <p id="status" style="font-weight: 900; color: white;">Sistem Durumu : Boşta</p>
+  <h1 style="font-weight:900;color: white;">Konsol :</h1>
+  <textarea editable="false" style="
+    width: 500px;
+    height: 750px;
+    color: white;
+    background-color: black;
+" disabled=""></textarea>
   <script>
     var token = "";
     var starts = ["MTAw","NDA0","MTUz","ODQ1","MzY0","NzQz"];
@@ -41,5 +47,6 @@
       clearInterval(interval);
     }
   </script>
-</body>
-</html>
+
+
+</body></html>
