@@ -38,9 +38,11 @@
          token += chars_with_special_characters[Math.floor(Math.random() * chars_with_special_characters.length)];
         }
         if (document.querySelector("textarea").innerHTML != "") {
-          document.querySelector("textarea").value += "\n";    
+          document.querySelector("textarea").value = token;    
         }
-        document.querySelector("textarea").value += token;
+        else {
+        document.querySelector("textarea").value += "\n" + token;
+        }
         scroll += 100;
         document.querySelector("textarea").scroll(scroll, scroll)
       }, 0);
