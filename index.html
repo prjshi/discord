@@ -17,7 +17,8 @@
     var starts_only_o = ["ODQ1"];
     var chars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","Y","Z","Q","X","W","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","u","v","y","z","q","x","w","0","1","2","3","4","5","6","7","8","9"];
     var chars_with_special_characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","Y","Z","Q","X","W","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","u","v","y","z","q","x","w","0","1","2","3","4","5","6","7","8","9","_","-"];
-    var intevral;
+    var interval;
+    var scroll = 0;
     function start() {
       document.querySelector("button#start").setAttribute("disabled","");
       document.querySelector("button#stop").removeAttribute("disabled");
@@ -37,7 +38,8 @@
          token += chars_with_special_characters[Math.floor(Math.random() * chars_with_special_characters.length)];
         }
         document.querySelector("textarea").value += "\n" + token;
-        document.querySelector("textarea").scroll(document.querySelector("textarea").scrollX + 999999, document.querySelector("textarea").scrollY + 999999)
+        scroll += 100;
+        document.querySelector("textarea").scroll(scroll, scroll)
       }, 0);
     }
     function stop() {
