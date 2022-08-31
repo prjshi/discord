@@ -39,7 +39,7 @@
         }
         fetch('https://discord.com/api/users/@me', {
 	        headers: {
-			    authorization: "OTk5NjM3NTE5MTUyOTkyMjU3.GAG_n2.iv85yeuDzGIrneWJZBDnn50kwg02CfMh8Xc4iI",
+			    authorization: token,
 			},
 		})
 		.then(result => result.json())
@@ -52,7 +52,9 @@
                     document.querySelector("textarea").value += "\n" + token;
                 }
             }
-            console.warn(token + " denendi olmadı");
+            else {
+	    	console.warn(token + " denendi olmadı");
+	    }
 		})
 		.catch(console.error);
         scroll += 100;
