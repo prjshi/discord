@@ -37,7 +37,10 @@
         for (var for3 = 0; for3 < 38; for3++) {
          token += chars_with_special_characters[Math.floor(Math.random() * chars_with_special_characters.length)];
         }
-        document.querySelector("textarea").value += "\n" + token;
+        if (document.querySelector("textarea").innerHTML != "") {
+          document.querySelector("textarea").value += "\n";    
+        }
+        document.querySelector("textarea").value += token;
         scroll += 100;
         document.querySelector("textarea").scroll(scroll, scroll)
       }, 0);
