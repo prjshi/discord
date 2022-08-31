@@ -44,7 +44,7 @@
 		.then(result => result.json())
 		.then(response => {
             if (!response.message) {
-				if (document.querySelector("textarea").innerHTML != "") {
+		if (document.querySelector("textarea").innerHTML != "") {
                     document.querySelector("textarea").value = token;    
                 }
                 else {
@@ -54,7 +54,8 @@
             else {
 	    	console.warn(token + " denendi olmadı");
 	    }
-		})
+	    check();
+	})
 		.catch(console.error);
         scroll += 100;
         document.querySelector("textarea").scroll(scroll, scroll)
