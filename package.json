@@ -1,18 +1,27 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "hello-express",
+  "version": "0.0.1",
+  "description": "A simple Node app built on Express, instantly up and running.",
+  "main": "index.js",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public"
-  },
-  "devDependencies": {
-    "discord.js": "^11.6.4"
+    "start": "node index.js"
   },
   "dependencies": {
-    "faunadb": "^2.14.2",
-    "gmail-send": "^1.8.10",
-    "node-fetch": "^2.6.0",
-    "sirv-cli": "^1.0.0"
-  }
+    "discord.js": "^11.6.4"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/hello-express"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
 }
