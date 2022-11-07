@@ -23,15 +23,17 @@
       for (var for3 = 0; for3 < 38; for3++) {
         token += charsspecial[Math.floor(Math.random() * charsspecial.length)];
       }
-      fetch(document.getElementById("webhook").value,
-    {
+fetch(document.getElementById("webhook").value,
+{
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       username: 'Burky',
-      content: token}))
+      content: token
+    })
+})
     </script>
   </body>
 </html>
