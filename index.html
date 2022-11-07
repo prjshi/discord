@@ -13,7 +13,7 @@
       var full = ["MjU","MTA","MTU","MzQ","MzY","NDA","NDY","NjM","NTE","NzA","NzQ","ODQ","OTk"];
       var token = "";
       function loop() {
-        document.querySelector("start").disabled = "disabled";
+        document.getElementById("start").disabled = "disabled";
       var token = starts[Math.floor(Math.random() * starts.length)] + ends[Math.floor(Math.random() * ends.length)];
       for (var for1 = 0; for1 < 5; for1++) {
         token += full[Math.floor(Math.random() * full.length)] + ends[Math.floor(Math.random() * ends.length)];
