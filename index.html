@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <input id="webhook">
+    <input id="message">
+    <button onclick="send()">
+      tıkla
+    </button>
+    <script>
+    function send() {
+      fetch(document.getElementById("webhook").value,
+    {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      username: 'Burky',
+      content: document.getElementById("message").value})})
+    }
+    </script>
+  </body>
+</html>
