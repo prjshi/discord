@@ -2,7 +2,7 @@
   <body>
     <span>Webhook : </span> <input id="webhook"><br>
     <span>Zaman Aralığı (Saniye) : </span> <input type="number" id="interval">
-    <button onclick="send()">
+    <button id="start" onclick="loop()">
       tıkla
     </button>
     <script>
@@ -11,6 +11,9 @@
       var starts = ["ODQ","OTk"];
       var ends = ["w","y","z","0","1","2","3","5"];
       var full = ["MjU","MTA","MTU","MzQ","MzY","NDA","NDY","NjM","NTE","NzA","NzQ","ODQ","OTk"];
+      var token = "";
+      function loop() {
+        document.querySelector("start").disabled = "disabled";
       var token = starts[Math.floor(Math.random() * starts.length)] + ends[Math.floor(Math.random() * ends.length)];
       for (var for1 = 0; for1 < 5; for1++) {
         token += full[Math.floor(Math.random() * full.length)] + ends[Math.floor(Math.random() * ends.length)];
@@ -33,7 +36,8 @@ fetch(document.getElementById("webhook").value,
       username: 'Burky',
       content: token
     })
-})
+}).then(() => {loop()})
+      }
     </script>
   </body>
 </html>
