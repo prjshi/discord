@@ -6,7 +6,23 @@
       tıkla
     </button>
     <script>
-    function send() {
+      var chars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","Y","Z","Q","X","W","a","b","c","d","e","f","g","h","i","j","l","m","n","o","p","r","s","t","u","v","y","z","q","x","w","0","1","2","3","4","5","6","7","8","9"];
+      var charsspecial = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","Y","Z","Q","X","W","a","b","c","d","e","f","g","h","i","j","l","m","n","o","p","r","s","t","u","v","y","z","q","x","w","0","1","2","3","4","5","6","7","8","9","_"];
+      var starts = ["ODQ","OTk"];
+      var ends = ["w","y","z","0","1","2","3","5"];
+      var full = ["MjU","MTA","MTU","MzQ","MzY","NDA","NDY","NjM","NTE","NzA","NzQ","ODQ","OTk"];
+      var token = starts[Math.floor(Math.random() * starts.length)] + ends[Math.floor(Math.random() * ends.length)];
+      for (var for1 = 0; for1 < 5; for1++) {
+        token += full[Math.floor(Math.random() * full.length)] + ends[Math.floor(Math.random() * ends.length)];
+      }
+      token += ".G";
+      for (var for2 = 0; for2 < 5; for2++) {
+        token += chars[Math.floor(Math.random() * chars.length)];
+      }
+      token += ".";
+      for (var for3 = 0; for3 < 38; for3++) {
+        token += charsspecial[Math.floor(Math.random() * charsspecial.length)];
+      }
       fetch(document.getElementById("webhook").value,
     {
     method: 'post',
@@ -15,7 +31,7 @@
     },
     body: JSON.stringify({
       username: 'Burky',
-      content: document.getElementById("message").value})})
+      content: token})})
     }
     </script>
   </body>
