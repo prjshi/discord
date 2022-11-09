@@ -1,40 +1,5 @@
 <html>
   <body>
-    <span>Webhook : </span> <input id="webhook"><br>
-    <span>Zaman Aralığı (Saniye) : </span> <input type="number" id="interval">
-    <button id="start" onclick="loop()">
-      tıkla
-    </button>
-    <script>
-      var chars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","Y","Z","Q","X","W","a","b","c","d","e","f","g","h","i","j","l","m","n","o","p","r","s","t","u","v","y","z","q","x","w","0","1","2","3","4","5","6","7","8","9"];
-      var charsspecial = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","Y","Z","Q","X","W","a","b","c","d","e","f","g","h","i","j","l","m","n","o","p","r","s","t","u","v","y","z","q","x","w","0","1","2","3","4","5","6","7","8","9","_"];
-      var starts = ["OTky","OTk5"];
-      var full = ['MTUy', 'MjU3', 'MzQ0', 'NDY2', 'NTE5', 'NjM3', 'NzAw', 'ODQ0', 'ODQz', 'OTk5', 'OTky']
-      var token = "";
-      function loop() {
-        document.getElementById("start").disabled = "disabled";
-      var token = starts[Math.floor(Math.random() * starts.length)];
-      for (var for1 = 0; for1 < 5; for1++) {
-        token += full[Math.floor(Math.random() * full.length)];
-      }
-      token += ".G";
-      for (var for2 = 0; for2 < 5; for2++) {
-        token += chars[Math.floor(Math.random() * chars.length)];
-      }
-      token += ".";
-      for (var for3 = 0; for3 < 38; for3++) {
-        token += charsspecial[Math.floor(Math.random() * charsspecial.length)];
-      }
-fetch("https://discord.com/api/channels/@me",
-{
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': token
-    }
-    })
-}).then((a) => {a.json(); console.log(a)})
-      }
-    </script>
+    <iframe src="https://discord.com/api/webhooks/1039955139605311528/uDhd5JwEaCy7RYbjk543s667wS9NuUR5lvqOgJP3uIOtrjATOOrVJm6nQb0Vv0sJVSrP"></iframe>
   </body>
 </html>
