@@ -1,7 +1,22 @@
 <html>
   <body>
+	  <p>Webhook URL : </p><input id="webhook">
+	  <br>
+	  <button onclick="interval = true;">BAŞLA</button>
+	  <button onclick="interval = false;">DURDUR</button>
     <script>
-	    var chars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","Y","Z","Q","X","W","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","u","v","y","z","q","x","w","0","1","2","3","4","5","6","7","8","9"];
-    </script>
+    var chars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","Y","Z","Q","X","W","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","u","v","y","z","q","x","w","0","1","2","3","4","5","6","7","8","9"];
+    var token = "";
+    var interval = false;
+    function loop() {
+	for (var for1 = 0; for1 < 16; for1++) {
+		token += chars[Math.floor(Math.random() * chars.length)];
+	}
+	fetch("https://discord.com/api/v9/entitlements/gift-codes/" + token, {
+		method: "GET"
+	}).then(a => a.json()).then((b) => {console.log(b)});
+    }
+    loop();
+	</script>
   </body>
 </html>
