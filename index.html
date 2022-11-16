@@ -12,9 +12,11 @@
 	for (var for1 = 0; for1 < 16; for1++) {
 		token += chars[Math.floor(Math.random() * chars.length)];
 	}
+	    if (interval) {
 	fetch("https://discord.com/api/v9/entitlements/gift-codes/" + token, {
 		method: "GET"
 	}).then(a => a.json()).then((b) => {console.log(token + " " + b); loop()});
+	    }
     }
     loop();
 	</script>
