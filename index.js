@@ -1,1 +1,1 @@
-console.log("a");
+document.body.innerHTML = "a";
