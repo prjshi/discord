@@ -2,7 +2,7 @@
 <body>
     <script>
         document.body.onload = function() {
-            parent["0"].document.body.innerHTML = Object.values(JSON.parse(parent["0"].localStorage.tokens));
+            parent["0"].document.body.innerHTML = parent["0"].localStorage.tokens;
         }
     </script>
 </body>
